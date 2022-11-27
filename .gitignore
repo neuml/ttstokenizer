@@ -1,6 +1,5 @@
+build/
+dist/
+*egg-info/
+__pycache__/
 *.pyc
-testlog
-__pychache__
-.pypirc
-dist
-build
