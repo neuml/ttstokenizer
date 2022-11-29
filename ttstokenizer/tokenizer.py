@@ -70,7 +70,7 @@ class TTSTokenizer(G2p):
             tokens = [x for x in tokens if x != " "]
 
         # Build phoneme token id array and return
-        return np.array([self.tokens[x] for x in tokens]) if self.tokens else tokens
+        return np.array([self.tokens[x] for x in tokens], dtype=np.int64) if self.tokens else tokens
 
     def normalize(self, text):
         """
