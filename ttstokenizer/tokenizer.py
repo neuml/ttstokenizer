@@ -292,7 +292,9 @@ class IPATokenizer(TTSTokenizer):
         Builds a vocabulary mapping the ARPABET alphabet (via CMUdict) to the
         International Phonetic Alphabet (IPA).
 
-        This mapping is from here: https://github.com/Kyubyong/g2p/issues/29#issuecomment-1841937554
+        See the following links for more information on this mapping.
+          - https://github.com/Kyubyong/g2p/issues/29
+          - https://en.wikipedia.org/wiki/ARPABET
 
         Returns:
             ARPABET to IPA vocabulary mapping
