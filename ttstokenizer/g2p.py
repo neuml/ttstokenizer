@@ -67,7 +67,7 @@ class G2p(object):
         self.p2idx = {p: idx for idx, p in enumerate(self.phonemes)}
         self.idx2p = {idx: p for idx, p in enumerate(self.phonemes)}
 
-        self.cmu = cmudict.dict()
+        self.vocab = cmudict.dict()
         self.load_variables()
         self.homograph2features = construct_homograph_dictionary()
 
@@ -145,6 +145,9 @@ class G2p(object):
         preds = [self.idx2p.get(idx, "<unk>") for idx in preds]
         return preds
 
+    def lookup(self, word, pos):
+        return self.vocab[word][0]
+
     def __call__(self, text):
         # preprocessing
         text = unicode(text)
@@ -172,8 +175,8 @@ class G2p(object):
                     pron = pron1
                 else:
                     pron = pron2
-            elif word in self.cmu:  # lookup CMU dict
-                pron = self.cmu[word][0]
+            elif word in self.vocab:  # lookup in vocab
+                pron = self.lookup(word, pos)
             else: # predict for oov
                 pron = self.predict(word)
 
