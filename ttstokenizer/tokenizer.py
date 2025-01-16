@@ -309,7 +309,7 @@ class IPATokenizer(TTSTokenizer):
             'AE0': 'æ',
             'AE1': 'ˈæ',
             'AE2': 'ˌæ',
-            'AH0': 'ɐ',
+            'AH0': 'ə',
             'AH1': 'ˈʌ',
             'AH2': 'ˌʌ',
             'AO0': 'ɔ',
