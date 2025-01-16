@@ -1,1 +1,1 @@
-from .tokenizer import TTSTokenizer
+from .tokenizer import IPATokenizer, TTSTokenizer
